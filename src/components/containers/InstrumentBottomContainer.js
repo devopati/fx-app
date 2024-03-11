@@ -3,8 +3,10 @@ import React from "react";
 import { customStyles } from "../../styles/styles";
 import { colors } from "../../colors/colors";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import { useNavigation } from "@react-navigation/native";
 
 const InstrumentBottomContainer = ({ symbol, open, close, spread, date }) => {
+  const navigation = useNavigation();
   return (
     <View style={[customStyles.containerStyle, styles.container]}>
       <View style={[styles.top]}>
@@ -31,6 +33,7 @@ const InstrumentBottomContainer = ({ symbol, open, close, spread, date }) => {
 
         <TouchableOpacity
           style={[styles.btn, { backgroundColor: "rgba(0,0,0,0.4)" }]}
+          onPress={() => navigation.navigate("Signals")}
         >
           <View>
             <Text style={[styles.toptext, { color: colors.greyVariant }]}>
