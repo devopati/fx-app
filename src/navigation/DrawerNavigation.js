@@ -5,27 +5,24 @@ import {
   DrawerItemList,
   createDrawerNavigator,
 } from "@react-navigation/drawer";
-import MenuScreen from "../screens/MenuScreen";
 import MainNavigation from "./MainNavigation";
 import { colors } from "../colors/colors";
+import PostedSignals from "../screens/PostedSignals";
 
 const Drawer = createDrawerNavigator();
 
 function CustomDrawerContent(props) {
   return (
-    <DrawerContentScrollView
-      {...props}
-      style={{ backgroundColor: colors.blue }}
-    >
+    <DrawerContentScrollView {...props} style={{}}>
       <DrawerItemList {...props} />
       <DrawerItem
-        label="Close drawer"
+        label="Close menu"
         onPress={() => props.navigation.closeDrawer()}
       />
-      <DrawerItem
+      {/* <DrawerItem
         label="Toggle drawer"
         onPress={() => props.navigation.toggleDrawer()}
-      />
+      /> */}
     </DrawerContentScrollView>
   );
 }
@@ -38,7 +35,7 @@ const DrawerNavigation = () => {
       screenOptions={{ headerShown: false }}
     >
       <Drawer.Screen name="Home screen" component={MainNavigation} />
-      <Drawer.Screen name="menu" component={MenuScreen} />
+      <Drawer.Screen name="Signals" component={PostedSignals} />
     </Drawer.Navigator>
   );
 };
