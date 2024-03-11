@@ -6,7 +6,7 @@ import MenuIcon from "../containers/MenuIcon";
 import { SafeAreaView } from "react-native-safe-area-context";
 import LineGraph from "../containers/LineGraph";
 
-const HomeTopView = () => {
+const HomeTopView = ({ showGraph = true }) => {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style="light" />
@@ -15,9 +15,11 @@ const HomeTopView = () => {
         <MenuIcon />
       </View>
 
-      <View style={styles.innerContainer}>
-        <LineGraph />
-      </View>
+      {showGraph && (
+        <View style={styles.innerContainer}>
+          <LineGraph />
+        </View>
+      )}
     </SafeAreaView>
   );
 };
