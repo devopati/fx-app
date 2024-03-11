@@ -30,7 +30,8 @@
     "react-native-screens": "~3.29.0",
     "react-native-wagmi-charts": "^2.3.2",
     "socket.io-client": "^4.7.4",
-    "victory-candlestick": "^36.9.1"
+    "victory-candlestick": "^36.9.1",
+    "expo-clipboard": "~5.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
