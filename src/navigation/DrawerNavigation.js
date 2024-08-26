@@ -8,6 +8,7 @@ import {
 import MainNavigation from "./MainNavigation";
 import { colors } from "../colors/colors";
 import PostedSignals from "../screens/PostedSignals";
+import { clearUserData } from "../utils/LogoutUser";
 
 const Drawer = createDrawerNavigator();
 
@@ -19,6 +20,7 @@ function CustomDrawerContent(props) {
         label="Close menu"
         onPress={() => props.navigation.closeDrawer()}
       />
+      <DrawerItem label="Logout" onPress={clearUserData} />
       {/* <DrawerItem
         label="Toggle drawer"
         onPress={() => props.navigation.toggleDrawer()}
